@@ -1,0 +1,67 @@
+.App {
+    text-align: center;
+    background-color: #051622;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .App-header {
+    background-color: #051622;
+    /* min-height: 5vh; */
+    height: auto;
+    width: 90vw;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-size: 30px;
+    padding: 0px 10px;
+    color: #1BA098;
+    border-bottom: #DEB992;
+    border-bottom-style: solid;
+    border-width: 1px;
+    margin: 0 auto;
+  }
+  
+  .App-header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+  }
+  
+  .App-header-engg {
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    width: 10px;
+  }
+  
+  .enggIcon {
+    width: 50px;
+    padding: 5px 0px;
+    padding-top: 10px;
+  
+  }
+  
+  
+  .Nav-Button {
+    background-color: #051622;
+    border: none;
+    color: #1BA098;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 10px;
+    cursor: pointer;
+  }
+  
+  .Nav-Button:hover {
+    opacity: 60%;
+  }

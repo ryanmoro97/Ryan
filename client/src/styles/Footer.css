@@ -1,0 +1,43 @@
+
+.App-footer {
+    height: auto;
+    min-height: 5vh;
+    width: 90vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #051622;
+    border-top: #DEB992;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: white;
+  }
+  
+  .App-footer-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+  }
+  
+  .footerIcon {
+    width: 30px;
+  }
+  
+  .footerIcon:hover {
+    opacity: 60%;
+  }
+  
+  .App-footer-pub {
+    width: 100%;
+    font-size: 12px;
+    color: #DEB992;
+  }
+  

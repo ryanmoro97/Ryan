@@ -1,0 +1,16 @@
+.App-body {
+    background-color: #051622;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: calc(20px);
+    color: #DEB992;
+    overflow: hidden;
+}
+
+.container {
+    flex: 1;
+}
