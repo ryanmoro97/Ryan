@@ -9,8 +9,143 @@
     font-size: calc(20px);
     color: #DEB992;
     overflow: hidden;
-}
+    gap: 10px;
+    padding: 20px;
+    transform: translateY(+100%);
+    animation: slide-up 2s ease forwards;
+  }
+  @keyframes slide-up {
+    0% {
+      transform: translateY(+100%);
+      border-bottom-color: transparent;
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      border-bottom-color: #DEB992;
+    }
+  }
 
 .container {
     flex: 1;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px; 
+}
+
+.project-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    background-color: #010d15;
+    border: 1px solid #1BA098;
+    border-radius: 10px;
+}
+
+.project {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.project img {
+    height: 60%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+    border: 1px solid #DEB992;
+    margin-bottom: 10%;
+
+}
+
+.project-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    color: white;
+}
+
+.project-info p:nth-of-type(2) {
+    border-top: 1px solid #DEB992;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.project-info p:nth-of-type(1) {
+    text-align: center;
+}
+
+.project-header h2 {
+    font-family: 'Segoe UI', Tahoma;
+    font-weight: 1;
+    font-size: 14px;
+    color: #DEB992;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-header {
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-wrapper:hover {
+    cursor: pointer;
+}
+
+.project-wrapper:hover .project-header h2 {
+    transform: rotateY(90deg); 
+}
+
+.project-wrapper:hover .project img {
+    transform: rotateY(90deg);  
+}
+
+.project-info p {
+    position: absolute;
+    transform: rotateY(90deg); 
+    transition: transform 0.3s ease-in-out;
+    margin: 5px;
+    font-size: 13px;
+    color: #DEB992;
+    text-align: start;
+
+}
+
+.project-wrapper:hover .project-info p {
+    transform: rotateY(0deg);  
+    transition: transform 0.3s ease-in-out;
+    transition-delay: 0.3s;
+}
+  
+.App-body-header {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin: 30px;
+    /* justify-content: space-between; */
+}
+
+.personal-summary {
+    text-align: start;
+    padding: 70px;
+    font-size: 18px;
 }

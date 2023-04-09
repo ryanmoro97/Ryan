@@ -1,0 +1,26 @@
+
+
+.skills {
+    /* border: 1px solid #DEB992; */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    position: relative;
+  }
+  
+  .skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 80px;
+    height: 80px; */
+    font-size: 15px;
+    color: #DEB992;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  

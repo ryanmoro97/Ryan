@@ -1,5 +1,4 @@
 import React from 'react';
-import { Header, Body, Footer } from './components';
 import AppRoutes from './routes/Routes';
 
 function App() {

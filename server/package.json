@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "nodemon server.js",
+    "create-db": "node database/create-db.js"
+  },
   "dependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^18.15.8",

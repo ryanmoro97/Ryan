@@ -1,0 +1,15 @@
+.images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px;
+    gap: 20px;
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px;
+    gap: 30px;
+}

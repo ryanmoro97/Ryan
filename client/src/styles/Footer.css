@@ -3,7 +3,8 @@
     height: auto;
     min-height: 5vh;
     width: 90vw;
-    margin: 0 auto;
+    margin: 0px auto;
+    padding: 3px;
     box-sizing: border-box;
     
     display: flex;
@@ -12,10 +13,19 @@
     justify-content: center;
     
     background-color: #051622;
-    border-top: #DEB992;
-    border-top-style: solid;
-    border-top-width: 1px;
+    border-top: 1px solid #DEB992;
     color: white;
+    transform: translateY(+100%);
+    animation: slide-up 2s ease forwards;
+  }
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
   
   .App-footer-icons {
@@ -26,6 +36,11 @@
     gap: 5px;
     width: 100%;
   }
+
+  .download-button {
+    background-color: transparent;
+    border: none;
+  }
   
   .footerIcon {
     width: 30px;
@@ -33,6 +48,7 @@
   
   .footerIcon:hover {
     opacity: 60%;
+    cursor: pointer;
   }
   
   .App-footer-pub {
