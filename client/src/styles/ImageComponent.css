@@ -3,7 +3,7 @@
     height: 100px;
     overflow: hidden;
     position: relative;
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
     border-radius: 10px;
     border: 1px solid #1BA098;
   }
@@ -12,26 +12,29 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(.5px);
   }
   
   .image-component.expanded {
     width: 50vh;
     height: auto;
     position: absolute;
-    top: 100px;
-    
+    top: 120px;
     z-index: 999;
-    border: none;
+    border: 0px;
   }
   
   .image-component.expanded img {
     width: 100%;
     height: 50%;
     object-fit: contain;
+    border-radius: 10px;
   }
   
   .image-component.expanded:hover,
   .image-component:hover {
     cursor: pointer;
+  }
+
+  .image-component:hover {
+    transform: scale(1.1);
   }

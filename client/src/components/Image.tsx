@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/ImageComponent.css';
 
-interface ImageComponentProps {
-  src: string;
-  alt: string;
-}
+// interface ImageComponentProps {
+//   src: string;
+//   alt: string;
+// }
 
-function ImageComponent({ src, alt }: ImageComponentProps) {
+
+
+const ImageComponent: React.FC<{ src: string, alt: string }> = ({ src, alt }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleClick = () => {
@@ -19,6 +21,7 @@ function ImageComponent({ src, alt }: ImageComponentProps) {
       onClick={handleClick}
     >
       <img src={`http://localhost:8008/images/${src}`} alt={alt} />
+      {isExpanded && <div className="image-overlay"></div>}
     </div>
   );
 }
