@@ -9,7 +9,7 @@ function Resume() {
   const downloadResumePDF = async () => {
     try {
         axios({
-            url: 'http://localhost:8008/pdfs/RyanMoro_Resume.pdf', 
+            url: 'http://localhost:5432/pdfs/RyanMoro_Resume.pdf', 
             method: 'GET',
             responseType: 'blob', 
         }).then((response) => {

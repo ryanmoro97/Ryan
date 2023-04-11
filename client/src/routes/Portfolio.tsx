@@ -1,9 +1,30 @@
 import React from 'react';
 import '../styles/Body.css';
 import Skills from '../components/Skills';
-import Projects from '../resources/Projects';
+import getProjects from '../api/Projects';
+import { FC, useEffect, useState } from 'react';
 
-function Body() {
+interface project {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  tools: string;
+  link: string;
+}
+
+
+const Projects: FC = () => {
+  const [projects, setProjects] = useState<project[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const data = await getProjects();
+      setProjects(data);
+    };
+    fetchProjects();
+  }, []);
+
   return (
     <main className="App-body">
     <div className='App-body-header'>
@@ -21,7 +42,7 @@ function Body() {
       <Skills/>
     </div>
     <div className="project-container">
-      {Projects.map((project) => (
+      {projects.map((project) => (
         <div className="project-wrapper" key={project.id}>
           <div className="project">
             <div className="project-info" onClick={() => window.open(project.link, "_blank")}>
@@ -40,5 +61,5 @@ function Body() {
   );
 }
 
-export default Body;
+export default Projects;
 

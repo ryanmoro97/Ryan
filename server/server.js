@@ -1,28 +1,16 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 8008; //process.env.PORT
+const port = 8008;
 const path = require('path');
 const fs = require('fs');
-
-// const getProjects = require('./routes/projects');
+const pool = require('./database/db');
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
-
-// app.get('/api/projects', getProjects);\
-
-// app.get('/api/downloadResumePDF', (req, res) => {
-//   var file = fs.createReadStream('/pdfs/RyanMoro_Resume.pdf');
-//   var stat = fs.statSync('/pdfs/RyanMoro_Resume.pdf');
-//   res.setHeader('Content-Length', stat.size);
-//   res.setHeader('Content-Type', 'application/pdf');
-//   res.setHeader('Content-Disposition', 'attachment; filename=resume.pdf');
-//   file.pipe(res);
-// });
 
 const reports = [
   { filename: 'Report.pdf', url: '/api/ReportPDF' },
@@ -48,6 +36,16 @@ reports.forEach((report) => {
 app.get('/api/images/:imageName', (req, res) => {
   const imageName = req.params.imageName;
   res.sendFile(`${__dirname}/images/${imageName}`);
+});
+
+app.get('/api/projects', async (req, res) => {
+  try {
+    const { rows } = await pool.query('SELECT * FROM projects');
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
 });
 
 
