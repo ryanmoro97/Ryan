@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/ImageComponent.css';
 
-// interface ImageComponentProps {
-//   src: string;
-//   alt: string;
-// }
-
-
-
 const ImageComponent: React.FC<{ src: string, alt: string }> = ({ src, alt }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 

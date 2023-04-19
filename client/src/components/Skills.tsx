@@ -12,7 +12,6 @@ interface SkillPosition {
 }
 
 function Skills() {
-  // console.log("mounted")
   const skillsSW = [
     'JavaScript',
     'Java',
@@ -73,7 +72,6 @@ function Skills() {
   const centerY = 250;
 
   useEffect(() => {
-    // console.log('useEffectInitial');
     const numSkills = skills.length;
     const radius = 200;
     const center = { x: 275, y: 200 };
@@ -90,14 +88,10 @@ function Skills() {
     }
 
     setPositions(positions);
-    // console.log(positions)
   }, [skills.length]);
 
   useEffect(() => {
-    // console.log('useEffect');
     const updatePositions = () => {
-      // const mouseX = 350;
-      // const mouseY = 250;
       const mouseX = centerX + Math.cos(angle) * 150;
       const mouseY = centerY + Math.sin(angle) * 150;
 
@@ -133,12 +127,10 @@ function Skills() {
       if (newPositions.length > 0) {
         setPositions(newPositions);
       }
-      // console.log(positions)
     };
     requestAnimationFrame(updatePositions);
   }, [positions, angle, speed]);
 
-  // const handleMouseMove = _.debounce((event: MouseEvent) => {
   function handleMouseMove(event: MouseEvent) {
     const container = document.querySelector('.skills-container');
     if (container) {
@@ -153,10 +145,8 @@ function Skills() {
         setAngle(Math.atan2(dy, dx));
       }
     }
-  // }, 10)
   }
   useEffect(() => {
-    // console.log('useEffectMoussse');
     document.addEventListener('mousemove', handleMouseMove);
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);

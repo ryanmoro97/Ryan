@@ -23,7 +23,6 @@
   "include": [
     "src", 
     "src/App.test.tsx", 
-    "src/reportWebVitals.ts", 
     "src/setupTests.ts"  
   ]
 }

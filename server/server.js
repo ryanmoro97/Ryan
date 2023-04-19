@@ -44,6 +44,7 @@ app.get('/api/projects', async (req, res) => {
     res.status(200).json(rows);
   } catch (error) {
     console.error(error);
+    console.log("Error in GET /api/projects");
     res.status(500).send('Server error');
   }
 });

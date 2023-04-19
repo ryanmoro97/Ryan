@@ -1,8 +1,7 @@
-import React from 'react';
 import '../styles/Body.css';
 import Skills from '../components/Skills';
 import getProjects from '../api/Projects';
-import { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 interface project {
   id: number;
@@ -32,7 +31,7 @@ const Projects: FC = () => {
       <p style={{ whiteSpace: 'pre-line' }}>
       <span style={{ fontSize: '24px' }}>H</span>i, my name is 
       <span style={{ fontSize: '24px' }}> Ryan Moro </span> 
-      {`and I recently graduated from the University of Alberta with a BSc. in Computer Engineering. 
+      {`and I graduated from the University of Alberta with a BSc. in Computer Engineering. 
       \n\tThroughout my education and previous work experience, I've gained exposure to a wide range of tools and technologies in both software and hardware domains, as well the integration between them. 
       \n\tMy recent focus has been learning modern web technologies and I am interested to pursue a career in software engineering or full-stack development.
       `
