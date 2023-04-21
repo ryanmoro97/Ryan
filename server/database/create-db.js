@@ -1,15 +1,5 @@
 const projects = require('./projects.json');
 const pool = require('./db');
-// const type { ProjectType } =require("./projectTypes");
-
-// type ProjectType = {
-//     id: number;
-//     name: string;
-//     image: string;
-//     description: string;
-//     tools: string;
-//     link: string;
-// }
 
 const deleteProjectsTable = async () => {
     try {
