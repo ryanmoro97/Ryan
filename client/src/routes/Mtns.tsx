@@ -7,19 +7,12 @@ const Mtns: React.FC = () => {
   const images = [];
 
   for (let i = 1; i <= 24; i++) {
-    images.push({
-      src: `mtns/mtn${i}.jpeg`,
-      alt: `Image ${i}`
-    });
+    images.push(`mtn${i}.jpeg`);
   }
   
   return (
     <div>
-      <div className="images">
-      {images.map((image, index) => (
-        <ImageComponent key={index} src={image.src} alt={image.alt} />
-      ))}
-      </div>
+      <ImageComponent images={images} />
     </div>
   );
 };

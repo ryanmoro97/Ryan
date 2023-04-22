@@ -1,40 +1,69 @@
-.image-component {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    position: relative;
-    /* transition: all 0.5s ease; */
-    border-radius: 10px;
-    border: 1px solid #1BA098;
+  .image-slideshow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    height: 40vh;
+    padding: 30px;
   }
   
-  .image-component img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .image-component.expanded {
-    width: 50vh;
-    height: auto;
-    position: absolute;
-    top: 120px;
-    z-index: 999;
-    border: 0px;
-  }
-  
-  .image-component.expanded img {
-    width: 100%;
-    height: 50%;
-    object-fit: contain;
-    border-radius: 10px;
-  }
-  
-  .image-component.expanded:hover,
-  .image-component:hover {
-    cursor: pointer;
+  .images-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
   }
 
-  .image-component:hover {
-    transform: scale(1.1);
+  .images-container img {
+    border-radius: 5px;
   }
+  
+  .left-image,
+  .right-image {
+    width: 20%;
+    opacity: 0.2;
+    height: auto;
+  }
+
+  .left2-image,
+  .right2-image {
+    width: 10%;
+    opacity: 0.2;
+    height: auto;
+  }
+  
+  .center-image {
+    width: 25%;
+    height: auto;
+  }
+  
+  .left-image {
+    transform: translateX(-10%) perspective(1000px) rotateY(-45deg);
+  }
+
+  .right-image {
+    transform: translateX(10%) perspective(1000px) rotateY(45deg);
+  }
+
+  .left2-image {
+    transform: translateX(10%) perspective(1000px) rotateY(-65deg);
+  }
+  .right2-image {
+    transform: translateX(-10%) perspective(1000px) rotateY(65deg);
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: #1BA098;
+    cursor: pointer;
+  }
+  
+  .arrow {
+    height: 40px;
+  }
+  .arrow:hover {
+    opacity: 60%;
+  }
+
+  

@@ -5,20 +5,13 @@ import '../styles/images.css';
 const Fish: React.FC = () => {
   const images = [];
 
-  for (let i = 1; i <= 5; i++) {
-    images.push({
-      src: `fishy/fishy${i}.jpg`,
-      alt: `Image ${i}`
-    });
+  for (let i = 1; i <= 26; i++) {
+    images.push(`fishy${i}.jpg`);
   }
   
   return (
     <div>
-      <div className="images">
-      {images.map((image, index) => (
-        <ImageComponent key={index} src={image.src} alt={image.alt} />
-      ))}
-      </div>
+      <ImageComponent images={images} />
     </div>
   );
 };

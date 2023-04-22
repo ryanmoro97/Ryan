@@ -10,7 +10,6 @@ import Mtns from './Mtns';
 import Fish from './Fish';
 import Bikes from './Bikes';
 import Ski from './Ski';
-import Cliff from './Cliff';
 
 
 function AppRoutes() {
@@ -27,7 +26,6 @@ function AppRoutes() {
                 <Route path="/Fish" element={<Fish />} />
                 <Route path="/Bikes" element={<Bikes />} />
                 <Route path="/Ski" element={<Ski />} />
-                <Route path="/Cliff" element={<Cliff />} />
             </Routes>
         </Container>
         <Footer />

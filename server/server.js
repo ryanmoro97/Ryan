@@ -24,8 +24,8 @@ const reports = [
 
 reports.forEach((report) => {
   app.get(report.url, (req, res) => {
-    var file = fs.createReadStream(`./resources/${report.filename}`);
-    var stat = fs.statSync(`./resources/${report.filename}`);
+    var file = fs.createReadStream(`./public/pdfs/${report.filename}`);
+    var stat = fs.statSync(`./public/pdfs/${report.filename}`);
     res.setHeader('Content-Length', stat.size);
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `inline; filename=${report.filename}`);
@@ -35,7 +35,7 @@ reports.forEach((report) => {
 
 app.get('/api/images/:imageName', (req, res) => {
   const imageName = req.params.imageName;
-  res.sendFile(`${__dirname}/images/${imageName}`);
+  res.sendFile(`${__dirname}/public/images/${imageName}`);
 });
 
 app.get('/api/projects', async (req, res) => {

@@ -19,25 +19,21 @@ const Bikes: React.FC = () => {
     'KdwmU7FVGDo',
     '4AHecQ00d1Y',
     'OehtU4Z-yT8',
-
-
   ];
+
   const images = [
-    { src: 'bike1.jpg', alt: 'Image 1' },
-    { src: 'bike2.png', alt: 'Image 2' },
-    { src: 'bike3.png', alt: 'Image 3' },
-    { src: 'bike4.jpg', alt: 'Image 4' },
-    { src: 'bike5.png', alt: 'Image 5' },
-    { src: 'bike8.png', alt: 'Image 6' },
-    
+    'bike1.jpg', 
+    'bike2.png', 
+    'bike3.png', 
+    'bike4.jpg', 
+    'bike5.png',
+    'bike8.png',
   ];
 
   return (
     <div>
-      <div className="images">
-      {images.map((image, index) => (
-        <ImageComponent key={index} src={image.src} alt={image.alt} />
-      ))}
+      <div>
+        <ImageComponent images={images} />
       </div>
       <div className='videos'>
       {videoIds.map(videoId => (

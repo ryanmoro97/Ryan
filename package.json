@@ -5,7 +5,6 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "postinstall": "cd server && npm ci --production && cd ../client && npm ci --production && cd ../ && npm ci --production",
     "deploy": "cd server && npm run create-db && cd ../client && npm run build && cd ../ && eb deploy",
     "start": "concurrently \"cd client && npm start\" \"cd server && npm start\""
   },
