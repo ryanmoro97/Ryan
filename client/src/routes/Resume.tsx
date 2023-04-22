@@ -3,13 +3,14 @@ import '../styles/Footer.css';
 import '../styles/Body.css';
 
 import axios from 'axios';
+const API_URL = process.env.API_URL || 'localhost:8008';
 
 function Resume() {
 
   const downloadResumePDF = async () => {
     try {
         axios({
-            url: 'http://localhost:5432/pdfs/RyanMoro_Resume.pdf', 
+            url: `http://${API_URL}//pdfs/RyanMoro_Resume.pdf`, 
             method: 'GET',
             responseType: 'blob', 
         }).then((response) => {
