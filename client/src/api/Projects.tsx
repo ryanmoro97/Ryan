@@ -1,8 +1,10 @@
 import axios from "axios";
-const API_URL = process.env.API_URL || 'localhost:8008';
+const API_URL = process.env.REACT_APP_API_URL || 'server:8008';
+
 
 const getProjects = async () => {
-  const response = await axios.get(`http://${API_URL}/api/projects`);
+  console.log('API_URL:', process.env.REACT_APP_API_URL);
+  const response = await axios.get(`${API_URL}/api/projects`);
   return response.data;
 };
 

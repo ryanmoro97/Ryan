@@ -1,4 +1,4 @@
-GET http://host.docker.internal:8080/api/projects
+GET http://localhost:8000/api/projects
 
 
 

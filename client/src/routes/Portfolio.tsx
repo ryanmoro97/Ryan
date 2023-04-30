@@ -2,6 +2,7 @@ import '../styles/Body.css';
 import Skills from '../components/Skills';
 import getProjects from '../api/Projects';
 import React, { FC, useEffect, useState } from 'react';
+const API_URL = process.env.REACT_APP_API_URL || 'localhost:8000';
 
 interface project {
   id: number;
@@ -50,7 +51,7 @@ const Projects: FC = () => {
               <div className="project-header">
               <h2>{project.name}</h2>
               </div>
-              <img src={`http://localhost:8008/images/${project.image}`} alt={project.name} />
+              <img src={`${API_URL}/images/${project.image}`} alt={project.name} />
             </div>
           </div>
         </div>

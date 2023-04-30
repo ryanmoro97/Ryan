@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/ImageComponent.css';
-const API_URL = process.env.API_URL || 'localhost:8008';
+const API_URL = process.env.REACT_APP_API_URL || 'localhoSFSst:8008';
 
 const ImageComponent: React.FC<{ images: string[] }> = ({ images }) => {
+  console.log('API_URL:', process.env.REACT_APP_API_URL);
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
@@ -41,7 +43,6 @@ const ImageComponent: React.FC<{ images: string[] }> = ({ images }) => {
       </div>
       <div className="images-container">
         {currentImages.map(({ className, index}) => {
-          console.log('index', index);
           const position = (index - currentIndex + images.length) % imagePositions.length;
           const offset = images.length % imagePositions.length - 3;
           const relativePos = (position + imagePositions.length - offset) % imagePositions.length;
@@ -57,7 +58,7 @@ const ImageComponent: React.FC<{ images: string[] }> = ({ images }) => {
                 transition: 'all 0.5s ease',
                 width :'35vh',
               }}
-              src={`http://${API_URL}/api/images/${images[(index + images.length) % images.length]}`}
+              src={`${API_URL}/api/images/${images[(index + images.length) % images.length]}`}
               alt={`image-${index+1}`}
             />
           );

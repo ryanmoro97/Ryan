@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  client:
+    image: client-image:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    environment:
+      - API_URL=server:8000
+
+  server:
+    image: server-image:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - RDS_HOSTNAME=host.docker.internal
+      - RDS_PORT=5432
+      - RDS_DB_NAME=ryan
+      - RDS_USERNAME=ryan
+      - RDS_PASSWORD=ryan

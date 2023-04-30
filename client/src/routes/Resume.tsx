@@ -1,16 +1,15 @@
-import React from 'react';
 import '../styles/Footer.css';
 import '../styles/Body.css';
-
+import React, { FC } from 'react';
 import axios from 'axios';
-const API_URL = process.env.API_URL || 'localhost:8008';
+const API_URL = process.env.REACT_APP_API_URL || 'localhost:8000';
 
-function Resume() {
+const Resume: FC = () => {
 
   const downloadResumePDF = async () => {
     try {
         axios({
-            url: `http://${API_URL}//pdfs/RyanMoro_Resume.pdf`, 
+            url: `${API_URL}//pdfs/RyanMoro_Resume.pdf`, 
             method: 'GET',
             responseType: 'blob', 
         }).then((response) => {

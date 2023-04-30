@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  client:
+    image: client-image-prod:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    volumes:
+      - ./client:/app
+
+  server:
+    image: server-image-prod:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - RDS_HOSTNAME=host.docker.internal
+      - RDS_PORT=5432
+      - RDS_DB_NAME=ryan
+      - RDS_USERNAME=ryan
+      - RDS_PASSWORD=ryan
