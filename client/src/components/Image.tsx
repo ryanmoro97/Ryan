@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/ImageComponent.css';
-const API_URL = process.env.REACT_APP_API_URL || 'localhoSFSst:8008';
+const API_URL = process.env.REACT_APP_API_URL || 'http://clientLB-976065716.us-east-2.elb.amazonaws.com:8000';
 
 const ImageComponent: React.FC<{ images: string[] }> = ({ images }) => {
-  console.log('API_URL:', process.env.REACT_APP_API_URL);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {

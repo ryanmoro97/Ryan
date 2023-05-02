@@ -2,7 +2,7 @@ import '../styles/Footer.css';
 import '../styles/Body.css';
 import React, { FC } from 'react';
 import axios from 'axios';
-const API_URL = process.env.REACT_APP_API_URL || 'localhost:8000';
+const API_URL = process.env.REACT_APP_API_URL || 'http://clientLB-976065716.us-east-2.elb.amazonaws.com:8000';
 
 const Resume: FC = () => {
 

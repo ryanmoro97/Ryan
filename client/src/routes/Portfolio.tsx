@@ -2,7 +2,7 @@ import '../styles/Body.css';
 import Skills from '../components/Skills';
 import getProjects from '../api/Projects';
 import React, { FC, useEffect, useState } from 'react';
-const API_URL = process.env.REACT_APP_API_URL || 'localhost:8000';
+const API_URL = process.env.REACT_APP_API_URL || 'http://clientLB-976065716.us-east-2.elb.amazonaws.com:8000';
 
 interface project {
   id: number;

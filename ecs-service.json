@@ -1,0 +1,27 @@
+{
+    "serviceName": "ecsService",
+    "taskDefinition": "ecsTask",
+    "desiredCount": 2,
+    "launchType": "FARGATE",
+    "platformVersion": "LATEST",
+    "networkConfiguration": {
+      "awsvpcConfiguration": {
+        "subnets": ["subnet-07d88a9294112518d", "subnet-05a5a156252e312a7"],
+        "securityGroups": ["sg-00f184c54db12593c"],
+        "assignPublicIp": "ENABLED"
+      }
+    },
+    "loadBalancers": [
+      {
+        "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:869364247297:targetgroup/client/215da08979d124e8",
+        "containerName": "client",
+        "containerPort": 80
+      },
+      {
+        "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:869364247297:targetgroup/server/fc6a1decf46c48ea",
+        "containerName": "server",
+        "containerPort": 8000
+      }
+    ]
+  }
+  
