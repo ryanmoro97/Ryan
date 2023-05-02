@@ -4,6 +4,7 @@ const API_URL = process.env.REACT_APP_API_URL || 'http://clientLB-976065716.us-e
 
 const getProjects = async () => {
   const response = await axios.get(`${API_URL}/api/projects`);
+  // console.log(response.data);
   return response.data;
 };
 
